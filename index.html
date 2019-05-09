@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App | Sheridan College</title>
+    <link rel="stylesheet" href="weather-icons-master/css/weather-icons.min.css"/>
+    <link rel="stylesheet" href="weather-icons-master/css/weather-icons-wind.min.css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>   
+</head>
+<body>
+	<div data-role="page" id="homepage" data-theme="b">
+		<div data-role="header">
+			<h1 class="wi wi-day-snow-thunderstorm">Current Weather</h1>
+		</div>
+		<form>
+    		<input id="input"  placeholder="Search by city name..."/>
+			<button id="submit" >Go</button>
+		</form>
+		<div data-role="main" class="ui-content">
+			<form>
+			<div class="ui-field-contain">
+			    <select name="select-native-4" value="Search History">
+			    <option  disabled selected>Search History</option>
+			        <optgroup id="recentsearches" disabled selected>
+			        </optgroup>
+			    </select>
+			</div>
+			</form>		
+			<ul data-role="listview" data-inset="true" id="todayWeather">
+				<li id="day"></li>
+				<li>
+					<div style="width: 100%; display: block;">
+						<div style="width: 48%; display: inline-block; margin-left: 1%; margin-right: 1.5%;">
+							<ul data-role="listview" id="todayWeatherBrief" data-inset="true"></ul>
+						</div>
+						<div style="width: 48%;  display: inline-block;" >
+							<ul data-role="listview" id="todayWeatherInfo" data-inset="true"></ul>
+						</div>
+					</div>
+				</li>	
+			</ul>
+			
+			<ul data-role="listview" data-inset="true" id="currentWeather">
+			</ul>
+		</div>
+
+		<div data-role="footer">
+		<h1 class="wi wi-stars">Powered by APIXU</h1>
+		</div>
+
+		
+
+		<div data-role="tabs" id="tabs" data-theme="b">
+			<div data-role="navbar">
+				<ul>
+					<li><a id="goHome" data-ajax="false">Home</a></li>
+					<li><a id="goChart" data-ajax="false">Chart</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+	<div data-role="page" id="chart" data-theme="b">
+		<div data-role="header">
+			<h1 class="wi wi-day-snow-thunderstorm">Statistics for 7 Days</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+			<canvas id="myChart"></canvas>
+		</div>
+
+		<div data-role="footer">
+		<h1 class="wi wi-stars">Powered by APIXU</h1>
+		</div>
+
+		
+
+		<div data-role="tabs" id="tabs" data-theme="b">
+			<div data-role="navbar">
+				<ul>
+					<li><a data-rel="back" data-ajax="false">Home</a></li>
+					<li><a id="goChart" data-ajax="false">Chart</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+
+</body>
+</html>
